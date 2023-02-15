@@ -2,12 +2,12 @@ type Category {
   id: ID!
   name: String!
   description: String
-  courses: [Course!]
+  courses: [Course!]!
 }
 
 type Course {
   id: ID!
-  name: String!
+  name : String!
   description: String
   category: Category!
 }
@@ -15,11 +15,16 @@ type Course {
 input NewCategory {
   name: String!
   description: String
+}
+
+input NewCourse {
+  name: String!
+  description: String
   categoryId: ID!
 }
 
 type Query {
-  categories: [Category!]!,
+  categories: [Category!]!
   courses: [Course!]!
 }
 
